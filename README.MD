@@ -1,15 +1,58 @@
-# CUDA Practice
+# CUDA-C
 
-This is just the practice repo for my CUDA C & other low level systems journey. A lot of bad code. 
+A collection of CUDA C experiments documenting my hands-on study of GPU
+programming, parallel algorithms, memory behavior, and matrix computation.
 
-It will contain my initial self contained implementations for my computation Library, my main goals are of course Matrix operations, for multidimensional initially starting with 2d. So GEMM for now especially FP32 -> FP8 and further more quantization & optimization things I might learn for the AMD competition.
+This repository is intentionally exploratory. It contains implementations I
+wrote and repeatedly rebuilt while learning CUDA fundamentals and experimenting
+with different approaches to correctness and performance.
 
-Right now this contains some Fractal code for the julia set, some Vector Add/Dot product scripts, matrix Transpose and finally Naive GEMM both CPU & GPU. 
+## Topics Explored
 
+### CUDA execution fundamentals
+- Thread, block, and grid organization
+- Global thread indexing
+- Grid-stride loops
+- Device memory allocation and transfers
 
-profiling resources: https://github.com/Infatoshi/cuda-course/tree/master/07_Faster_Matmul
-and optimization too i suppose
+### Parallel operations
+- Vector addition
+- Vector dot product
+- Shared-memory reduction
+- Thread divergence and branching behavior
 
+### Matrix operations
+- CPU and GPU matrix transpose
+- Row-major and column-major indexing
+- Naive GEMM
+- GEMM for square and non-square matrices
+- Repeated GEMM implementations to reinforce indexing and execution mechanics
 
+### Performance experimentation
+- Shared memory
+- Reduction techniques
+- Memory access patterns
+- Kernel launch configuration
+- Profiling CUDA implementations
+- Comparing alternative stride-loop implementations
+- Experiments with GEMM scaling and performance
 
+## Related Work
 
+### RawTorch
+A small deep-learning framework built from scratch to explore tensors,
+automatic differentiation, neural-network layers, and the connection between
+framework-level operations and lower-level numerical computation.
+
+https://github.com/PavelAugustt/RawTorch
+
+### LeetGPU Solutions
+Smaller CUDA kernel exercises including memory-coalesced transpose and
+element-wise activation kernels.
+
+https://github.com/PavelAugustt/LeetGPU-Sols
+
+### Video Explanations
+I make technical explanations of several GPU concepts and implementations:
+
+https://www.youtube.com/@pavelaugust
